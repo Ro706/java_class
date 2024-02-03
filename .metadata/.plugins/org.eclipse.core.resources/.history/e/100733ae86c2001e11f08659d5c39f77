@@ -39,34 +39,14 @@ public class Sample2 {
 			}
 			System.out.println();
 		}
-		
 		System.out.println();
-		//replace the * with j or
-		/*
-		 1 
-		 1 2 
-		 1 2 3 
-		 */
 		for (int i = 1;i<=3;i++) {
 			for(int j=1;j<=i;j++) {
 				System.out.print(j+" ");
 			}
 			System.out.println();
 		}
-		/*
-		 111
-		 222
-		 333
-		 */
-		 System.out.println();
-		 //printing the above pattern
-		 for(int i = 1;i<=3;i++) {
-			 for(int j = 1;j<=3;j++) {
-				 System.out.print(i+" ");
-			 }
-			 System.out.println();
-		 }
-		 
+		
 		System.out.println();
 		//right angle triangle
 	    for(int i =0 ;i<=3;i++) {
