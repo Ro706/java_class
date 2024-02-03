@@ -1,0 +1,12 @@
+
+public class Sample2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("hello world !");
+		String name = "Symbiosis institute of technology";
+        System.out.println("My college name is "+name+"Nagpur.\n "+name+"is Located in Nagpur.\n");
+        
+	}
+
+}
