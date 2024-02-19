@@ -30,7 +30,6 @@ public class Pattern {
 			}
 			System.out.println();
 		}
-		System.out.println();
 		int rows = 4; 
 	    for (int i = 1; i <= rows; i++) { 
 	      for (int j = rows - i; j > 0; j--) { 
