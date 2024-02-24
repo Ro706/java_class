@@ -15,14 +15,12 @@ public class Const {
 		this.name = name;
 		System.out.println("Inside Parameterized constructor of class Const");
 	}
-	public void Constget() {
+	public Constget() {
 		System.out.println("rate "+rate);
 		System.out.println("Name "+name);
 	}
 	public static void main(String[] args) {
 		Const c1 = new Const();
 		Const c2 = new Const(10.11f,"Ro706");
-		c1.Constget();
-		c2.Constget();
 	}
 }
