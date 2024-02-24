@@ -1,0 +1,6 @@
+
+public class Const {
+	public Const() {
+		System.out.println("Inside Default constructor of class Const");
+	}
+}
