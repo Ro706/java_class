@@ -1,0 +1,19 @@
+
+public class Static_Variable_Demo {
+	private static String collegeName ="Symbiosis institute of technology"; 	//Instance variable
+
+	/**
+	 * @return the collegeName
+	 */
+	public String getCollegeName() {
+		return collegeName;
+	}
+
+	/**
+	 * @param collegeName the collegeName to set
+	 */
+	public void setCollegeName(String collegeName) {
+		this.collegeName = collegeName;
+	}
+	
+}
