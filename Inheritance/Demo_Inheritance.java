@@ -8,5 +8,6 @@ public class Demo_Inheritance {
 		
 		
 		
+		
 	}
 }

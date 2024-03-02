@@ -1,4 +1,7 @@
 
 public class Demo {
-	int Demo;
+	public void ShowDemo() {
+		System.out.println("Inside class Demo");
+	}
+	
 }
