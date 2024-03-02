@@ -1,5 +1,10 @@
 public class showCount {
 	public static void main(String[] args) {
+		Count.createInstance();
+		Count.ShowCount();
+		Count.createInstance();
+		Count.ShowCount();
+		Count.createInstance();
 		Count.ShowCount();
 //		Count obj1 = new Count();
 //		obj1.ShowCount();
@@ -7,5 +12,6 @@ public class showCount {
 //		obj2.ShowCount();
 //		Count obj3 = new Count();
 //		obj3.ShowCount();
+		
 	}
 }
