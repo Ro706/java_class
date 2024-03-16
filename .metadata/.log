@@ -1663,3 +1663,6 @@ Caused by: org.eclipse.core.runtime.AssertionFailedException: assertion failed:
 	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
 	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:121)
 	... 52 more
+
+!ENTRY org.eclipse.eclemma.ui 4 4 2024-03-16 14:50:23.532
+!MESSAGE ILaunchShortcut declaration not found: org.eclipse.pde.ui.junitWorkbenchShortcut
