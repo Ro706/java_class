@@ -1666,3 +1666,6 @@ Caused by: org.eclipse.core.runtime.AssertionFailedException: assertion failed:
 
 !ENTRY org.eclipse.eclemma.ui 4 4 2024-03-16 14:50:23.532
 !MESSAGE ILaunchShortcut declaration not found: org.eclipse.pde.ui.junitWorkbenchShortcut
+
+!ENTRY org.eclipse.eclemma.ui 4 4 2024-03-16 16:25:15.121
+!MESSAGE ILaunchShortcut declaration not found: org.eclipse.pde.ui.runtimeWorkbenchShortcut
