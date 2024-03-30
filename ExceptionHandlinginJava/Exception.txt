@@ -1,0 +1,83 @@
+exception are Run time error 
+exception never solve error can solve but exception can handle
+ In Java, an exception is an unwanted or unexpected event that occurs during the execution of a program, disrupting the normal flow of instructions. Exceptions can be caught and handled by the program. When an exception occurs within a method, it creates an object known as the **exception object**. This object contains information about the exception, such as its name, description, and the state of the program when the exception occurred.
+
+There are two main types of exceptions in Java:
+
+1. Checked Exceptions:
+   - Checked exceptions are also called compile-time exceptions because they are checked by the compiler at compile time.
+   - Examples include `IOException`, `SQLException`, etc.
+   - These exceptions must be explicitly handled using `try-catch` blocks or declared in the method signature using `throws`.
+
+2. Unchecked Exceptions:
+   - Unchecked exceptions are also known as runtime exceptions.
+   - They are not checked by the compiler at compile time.
+   - Examples include `ArithmeticException`, `NullPointerException`, `ArrayIndexOutOfBoundsException`, etc.
+   - These exceptions can be handled, but it's not mandatory to do so.
+
+Exception Handling in Java
+
+Exception handling in Java is a powerful mechanism to handle runtime errors, ensuring that the normal flow of the application can be maintained. Let's dive into the details:
+
+1. What is an Exception in Java?
+   - An exception is an abnormal condition that disrupts the normal flow of a program during execution.
+   - In Java, exceptions are events that occur at runtime and can be caught and handled by the program.
+   - When an exception occurs, an exception object is created, containing information about the exception.
+
+2. Advantages of Exception Handling:
+   - Maintains normal flow: Exception handling ensures that the program continues executing even after an exception occurs.
+   - Example:
+     ```
+     statement 1;
+     statement 2;
+     statement 3;
+     statement 4;
+     statement 5; // Exception occurs
+     statement 6; // Rest of the code will not execute without exception handling
+     ```
+
+3. Hierarchy of Java Exception Classes:**
+   - The root class is `java.lang.Throwable`, inherited by two subclasses: `Exception` and `Error`.
+   - `Exception` is used for exceptional conditions that user programs should catch.
+   - `Error` is used by the JVM to indicate errors related to the runtime environment itself.
+
+4. Types of Java Exceptions:
+   - Checked Exceptions (Compile-time Exceptions):
+     - Checked at compile time by the compiler.
+     - Examples: `IOException`, `SQLException`.
+   - Unchecked Exceptions (Runtime Exceptions):
+     - Not checked at compile time but checked at runtime.
+     - Examples: `ArithmeticException`, `NullPointerException`.
+   - Errors:
+     - Irrecoverable conditions related to the runtime environment.
+     - Examples: `OutOfMemoryError`, `StackOverflowError`.
+
+5. Difference between Checked and Unchecked Exceptions:
+   - Checked Exceptions:
+     - Checked at compile time.
+     - Examples: `IOException`, `SQLException`.
+   - Unchecked Exceptions:
+     - Not checked at compile time.
+     - Examples: `ArithmeticException`, `NullPointerException`.
+
+     
+
+public class ExceptionExample1 {
+
+	public static void main(String[] args) {
+		try {
+			int a = 10;
+			int b = 0;
+			int c = a/b ;
+		System.out.println("c = "+c);
+		}
+		catch(ArithmeticException e) {
+			System.out.println("Exception"+e);
+		}
+//		System.out.println("c = "+c);
+		System.out.println("The End...");
+
+	}
+
+}
+     

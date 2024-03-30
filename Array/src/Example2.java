@@ -20,7 +20,7 @@ public class Example2 {
 		for (int i = 1 ; i< arr.length;i++) {
 			if (max2 < arr[i] && arr[i] != max) {
 				max2 = arr[i];
-			}
+			} 
 		}
 		System.out.println(max2);
 		int max3 = arr[0];
