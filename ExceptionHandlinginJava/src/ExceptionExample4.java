@@ -12,6 +12,10 @@ public class ExceptionExample4 {
 			else {
 				System.out.println("No you can not vote");
 			}
+		}catch(ArithmeticException e) {
+			System.out.println("Exception : "+e);
+		}catch(NullPointerException e) {
+			System.out.println("Exception : "+e);
 		}catch(Exception e) {
 			System.out.println("Exception : "+e);
 		}
