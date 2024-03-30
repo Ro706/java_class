@@ -14,5 +14,4 @@ public class ExceptionExample2 {
 		System.out.println("The End ...");
 
 	}
-
 }
