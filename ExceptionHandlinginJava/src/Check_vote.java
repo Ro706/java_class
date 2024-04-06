@@ -1,7 +1,7 @@
 public class Check_vote{
-  public static void findFact(int num) throws MyException{
+  public static void findvote(int num) throws AgeException{
     if (num < 18){
-      throw new MyException("You can't able to vote ");
+      throw new AgeException("You can't able to vote ");
     }
     else{
       System.out.println("you can vote");
