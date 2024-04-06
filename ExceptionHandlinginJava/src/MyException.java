@@ -1,4 +1,4 @@
-public class MyException extends ExceptionHandlingJava{
+public class MyException extends Exception{
   public MyException(String msg){
     super(msg);
   }

@@ -1,7 +1,7 @@
-public class FindFactorial{
+public class voteFind{
   public static void main(String[] args){
     try{
-      Calc_Factorial.findFact(2);
+      VotingChecker.voteFind(8);
     }
     catch(Exception e){
       System.out.println("Exception is :"+e);
