@@ -1,0 +1,79 @@
+byte => Byte
+int => Integer
+short => Short
+long => Long
+float => Float
+double => Double
+char => Char
+Boolean =>Boolean
+
+Q. what is wrapper class?
+ A .A wrapper class in Java is a class that **wraps around a primitive data type** and converts it into an object. Let's explore this concept further:
+
+1. Purpose of Wrapper Classes:
+    - Conversion: Wrapper classes provide a way to treat primitive data types (such as `int` or `double`) as objects.
+    - Compatibility: They allow you to use primitive data types in places where only objects are accepted, such as in collections.
+    - Modification: Wrapper classes are useful when you need to modify the arguments passed into a method (since primitive types are passed by value).
+    - Support for Synchronization: In multithreading scenarios, an object is needed to support synchronization.
+
+2. Advantages of Wrapper Classes:
+    - Collections: Collections (e.g., `ArrayList`, `Vector`) store only objects (reference types), not primitive types.
+    - Methods: On object data, you can call multiple methods like `compareTo()`, `equals()`, and `toString()`.
+    - Cloning: Cloning processes work only with objects.
+    - Null Values: Object data allows null values.
+    - Serialization: Serialization can handle only object data.
+
+3. Common Wrapper Classes in Java:
+    - Here are some examples of wrapper classes and their corresponding primitive data types:
+        - `char` → `Character`
+        - `byte` → `Byte`
+        - `short` → `Short`
+        - `int` → `Integer`
+        - `long` → `Long`
+        - `float` → `Float`
+        - `double` → `Double`
+        - `boolean` → `Boolean`
+
+4. Autoboxing and Unboxing:
+    - Autoboxing: Automatic conversion of primitive types to their corresponding wrapper classes (e.g., `int` to `Integer`, `long` to `Long`).
+    - Unboxing: Reverse process of autoboxing (e.g., `Integer` to `int`, `Long` to `long`).
+
+    Example of Autoboxing:
+    ```java
+    import java.util.ArrayList;
+    class Autoboxing {
+        public static void main(String[] args) {
+            char ch = 'a';
+            Character a = ch;
+            ArrayList<Integer> arrayList = new ArrayList<>();
+            arrayList.add(25);
+            System.out.println(arrayList.get(0)); // Output: 25
+        }
+    }
+    ```
+
+    **Example of Unboxing**:
+    ```java
+    import java.util.ArrayList;
+    class Unboxing {
+        public static void main(String[] args) {
+            Character ch = 'a';
+            char a = ch;
+            ArrayList<Integer> arrayList = new ArrayList<>();
+            arrayList.add(24);
+            int num = arrayList.get(0);
+            System.out.println(num); // Output: 24
+        }
+    }
+    ```
+
+5. **Custom Wrapper Classes**:
+    - You can create your own wrapper classes by extending existing ones or implementing custom behavior.
+
+Remember, wrapper classes bridge the gap between primitive types and objects in Java! 📦🔗
+
+Source: Conversation with Bing, 4/6/2024
+(1) Wrapper Classes in Java - GeeksforGeeks. https://www.geeksforgeeks.org/wrapper-classes-java/.
+(2) Wrapper Class in Java Explanation with Examples. https://www.prepbytes.com/blog/java/wrapper-class-in-java/.
+(3) design patterns - What is a wrapper class? - Stack Overflow. https://stackoverflow.com/questions/889160/what-is-a-wrapper-class.
+(4) Wrapper class in Java - Javatpoint. https://www.javatpoint.com/wrapper-class-in-java.
