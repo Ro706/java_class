@@ -76,7 +76,7 @@ String i = "Hello, World!";
 ```
 ---
 # Java escape sequences table
-```markdown
+
 | Escape Sequence | Description                  |
 |-----------------|------------------------------|
 | `\\t`           | Represents a tab character    |
@@ -87,9 +87,7 @@ String i = "Hello, World!";
 | `\\"`           | Represents a double quotation mark |
 | `\\\\`          | Represents a backslash       |
 | `\\uXXXX`       | Represents a Unicode character (specified by its hexadecimal value) |
-```
 
-Feel free to customize this table by adding more escape sequences or additional information as needed. 😊
 ---
 # Loops in Java
 
