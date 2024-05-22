@@ -89,6 +89,54 @@ String i = "Hello, World!";
 | `\\uXXXX`       | Represents a Unicode character (specified by its hexadecimal value) |
 
 ---
+## Variables in Java
+
+In Java, **variables** are used to store different types of values that can be changed during the program's execution. The data type of a variable defines what kind of value it can hold. Here's the syntax to define a variable:
+
+```java
+<access-modifier> <data-type> <name-of-the-variable> = <value>;
+```
+
+For example, consider the following variable declaration:
+
+```java
+private int number = 10;
+```
+
+In this example:
+- `private` is the access modifier (you can use other modifiers like `public`, `protected`, or package-private).
+- `int` is the data type (representing integers).
+- `number` is the name of the variable.
+- `10` is the initial value assigned to the variable.
+
+## Constants in Java
+
+A **constant** in Java is a variable whose value cannot be changed once it is assigned. To declare a constant, we use the `static` and `final` keywords. Here's the syntax to assign a constant value in Java:
+
+```java
+static final <data-type> <identifier-name> = <constant-value>;
+```
+
+For example, let's say we want to create a constant named `PI` to represent the mathematical constant π (approximately 3.14159). We can declare it as follows:
+
+```java
+public class MathConstants {
+    static final double PI = 3.14159;
+    
+    public static void main(String[] args) {
+        System.out.println("The value of PI is: " + PI);
+    }
+}
+```
+
+In this example:
+- `static` ensures that the variable is available without an instance of its defining class being loaded.
+- `final` indicates that the value of `PI` cannot be changed.
+- `double` is the data type.
+- `3.14159` is the constant value assigned to `PI`.
+
+Constants are useful for making your code more readable, maintaining consistency, and preventing accidental modifications.
+---
 # Loops in Java
 
 Loops are used in programming to repeat a specific block of code until a certain condition is met. In Java, we have three types of loops: `for`, `while`, and `do-while`.
