@@ -20,6 +20,37 @@ public class HelloWorld {
     }
 }
 ```
+---
+1. **JVM (Java Virtual Machine)**:
+   - **Abstract Machine**: JVM is an abstract machine. It doesn't physically exist but provides a runtime environment for executing Java bytecode.
+   - **Specification**: It defines how Java programs should run on different platforms.
+   - **Tasks**:
+     - Loads code.
+     - Verifies code.
+     - Executes code.
+     - Provides a runtime environment.
+   - **Platform-Dependent**: Different JVM implementations are available for various hardware and software platforms.
+   - **Example**: When you run a Java program, it's the JVM that executes the bytecode.
+   - ¹²
+
+2. **JRE (Java Runtime Environment)**:
+   - **Implementation of JVM**: JRE is the implementation of the JVM.
+   - **Complete Environment**: It provides a complete runtime environment for running Java applications.
+   - **Components**:
+     - JVM (which executes Java code).
+     - Class libraries (required by the JVM).
+   - **Platform-Specific**: JRE is platform-dependent due to differences in OS configurations.
+   - **Example**: When you run a Java application, you need the JRE installed.
+   - ³
+
+3. **JDK (Java Development Kit)**:
+   - **Development Environment**: JDK is used for developing Java applications and applets.
+   - **Components**:
+     - JRE (for execution).
+     - Development tools (compiler, archiver, documentation generator, etc.).
+   - **Platform-Dependent**: Like JRE, JDK is also platform-dependent.
+   - **Example**: Developers use the JDK to write, compile, and build Java applications.
+---
 # Java Primitive Data Types
 
 Java has 8 primitive data types, which are predefined by the language and named by a reserved keyword. These data types are used to create variables.
