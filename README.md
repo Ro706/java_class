@@ -30,6 +30,16 @@ Java has 8 primitive data types, which are predefined by the language and named 
 2. **short**: This is a 16-bit signed two's complement integer. The range is from -32768 to 32767.
 3. **int**: This is a 32-bit signed two's complement integer. The range is from -2147483648 to 2147483647. This is the default data type in Java.
 4. **long**: This is a 64-bit signed two's complement integer. The range is from -9223372036854775808 to 9223372036854775807. When using this data type, add an "L" at the end of the number.
+| Data Type | Description                  | Size (in bytes) |
+|-----------|------------------------------|-----------------|
+| `byte`    | 8-bit signed integer         | 1               |
+| `short`   | 16-bit signed integer        | 2               |
+| `int`     | 32-bit signed integer        | 4               |
+| `long`    | 64-bit signed integer        | 8               |
+| `float`   | 32-bit floating-point number | 4               |
+| `double`  | 64-bit floating-point number | 8               |
+| `char`    | 16-bit Unicode character     | 2               |
+| `boolean` | Represents true or false     | 1               |
 
 ## Floating Point Data Types
 
