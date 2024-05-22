@@ -74,7 +74,23 @@ boolean h = true;
 
 String i = "Hello, World!";
 ```
+---
+# Java escape sequences table
+```markdown
+| Escape Sequence | Description                  |
+|-----------------|------------------------------|
+| `\\t`           | Represents a tab character    |
+| `\\b`           | Represents a backspace       |
+| `\\n`           | Represents a newline         |
+| `\\r`           | Represents a carriage return |
+| `\\'`           | Represents a single quotation mark |
+| `\\"`           | Represents a double quotation mark |
+| `\\\\`          | Represents a backslash       |
+| `\\uXXXX`       | Represents a Unicode character (specified by its hexadecimal value) |
+```
 
+Feel free to customize this table by adding more escape sequences or additional information as needed. 😊
+---
 # Loops in Java
 
 Loops are used in programming to repeat a specific block of code until a certain condition is met. In Java, we have three types of loops: `for`, `while`, and `do-while`.
