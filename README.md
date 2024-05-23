@@ -638,10 +638,546 @@ public class InputExample {
     }
 }
 ```
+---
+# Formatting Output in Java
 
-Feel free to customize this example for your own input requirements! 😊
+In Java, formatting output is essential for displaying data in a readable and organized manner. You can format output using various techniques. Let's explore some common methods:
 
+## 1. Using `System.out.printf()`
+
+The `printf()` method allows you to format output based on specific rules and specifiers. It works similarly to the `printf()` function in C. Here's how to use it:
+
+```java
+public class OutputFormattingExample {
+    public static void main(String[] args) {
+        int intValue = 42;
+        double doubleValue = 3.14159;
+        String stringValue = "Java";
+
+        // Formatting integers, doubles, and strings
+        System.out.printf("Integer: %d, Double: %.2f, String: %s%n", intValue, doubleValue, stringValue);
+
+        // Formatting with width and precision
+        System.out.printf("Formatted double: %.4f%n", doubleValue);
+
+        // Right-aligning text within a specified width
+        System.out.printf("%20s%n", "Right-aligned");
+
+        // Combining multiple values
+        System.out.printf("Combined: %d %.2f %s%n", intValue, doubleValue, stringValue);
+    }
+}
+```
+
+Output:
+```
+Integer: 42, Double: 3.14, String: Java
+Formatted double: 3.1416
+       Right-aligned
+Combined: 42 3.14 Java
+```
+
+## 2. Using `String.format()`
+
+The `String.format()` method is similar to `printf()`, but it returns a formatted string instead of printing directly to the console:
+
+```java
+String formattedString = String.format("Formatted: %d %.2f %s", intValue, doubleValue, stringValue);
+System.out.println(formattedString);
+```
+
+## 3. Formatting Numbers with `DecimalFormat`
+
+For more control over decimal numbers, use the `DecimalFormat` class:
+
+```java
+import java.text.DecimalFormat;
+
+public class DecimalFormatExample {
+    public static void main(String[] args) {
+        double number = 12345.6789;
+
+        DecimalFormat decimalFormat = new DecimalFormat("#,###.00");
+        String formattedNumber = decimalFormat.format(number);
+
+        System.out.println("Formatted number: " + formattedNumber);
+    }
+}
+```
+
+Output:
+```
+Formatted number: 12,345.68
+```
+
+## 4. Other Formatting Techniques
+
+- For date and time formatting, use `SimpleDateFormat`.
+- For currency formatting, consider `NumberFormat.getCurrencyInstance()`.
+---
+# Conversion Specifiers for `printf()` in Java
+
+When using the `printf()` method in Java, you can format output by specifying conversion specifiers within the format string. These specifiers control how the arguments are displayed. Below, I've created a table of common conversion specifiers along with their meanings:
+
+| Conversion Specifier | Description |
+|----------------------|-------------|
+| `%s` | Formats a string argument. |
+| `%d` | Formats an integer (decimal) argument. |
+| `%f` | Formats a floating-point (double) argument. |
+| `%c` | Formats a character argument. |
+| `%b` | Formats a boolean argument. |
+| `%n` | Inserts a newline character. |
+| `%t` | Formats date/time values (used with date/time patterns). |
+| `%x` | Formats an integer as a hexadecimal number. |
+| `%o` | Formats an integer as an octal number. |
+| `%e` | Formats a floating-point number in scientific notation. |
+| `%g` | Formats a floating-point number in either decimal or scientific notation. |
+
+## Example Usage
+
+```java
+public class PrintfExample {
+    public static void main(String[] args) {
+        String name = "Alice";
+        int age = 30;
+        double salary = 50000.75;
+
+        System.out.printf("Name: %s, Age: %d, Salary: %.2f%n", name, age, salary);
+    }
+}
+```
+
+Output:
+```
+Name: Alice, Age: 30, Salary: 50000.75
+```
+---
+Yes, you can definitely use `printf()` in Java! The `printf()` method is part of the `java.io.PrintStream` class and allows you to format output in a flexible and controlled manner. It is commonly used for displaying data with specific formatting rules.
+
+Here's how you can use `printf()` in Java:
+
+1. **Basic Usage**:
+   - The `printf()` method works similarly to the `printf()` function in C.
+   - You provide a format string (which includes placeholders for values) followed by the actual values to be inserted.
+   - Example:
+     ```java
+     int age = 30;
+     double salary = 50000.75;
+     System.out.printf("Age: %d, Salary: %.2f%n", age, salary);
+     ```
+
+2. **Format Specifiers**:
+   - Format specifiers begin with `%` and are followed by a character that specifies the type of value to be inserted.
+   - Common format specifiers:
+     - `%d`: Integer
+     - `%f`: Floating-point (double)
+     - `%s`: String
+     - `%n`: Newline
+   - You can also control width, precision, alignment, and other formatting options using additional flags.
+   - Example:
+     ```java
+     String name = "Alice";
+     System.out.printf("Hello, %s! Your age is %d.%n", name, age);
+     ```
+
+3. **Precision and Width**:
+   - You can specify the number of decimal places for floating-point numbers using `.2f` (for example, `%.2f`).
+   - You can also set the minimum width for output (e.g., `%10s`).
+   - Example:
+     ```java
+     double pi = 3.141592653589793;
+     System.out.printf("Pi (rounded): %.2f%n", pi);
+     ```
+
+4. **Combining Values**:
+   - You can combine multiple values in a single `printf()` statement.
+   - Example:
+     ```java
+     System.out.printf("Name: %s, Age: %d, Salary: %.2f%n", name, age, salary);
+     ```
 ---
 
+![IMG_20240523_110041](https://github.com/Ro706/java_class/assets/60247178/020210a7-fdda-447b-8bdf-f74ccc9dac9a)
+![IMG20240523110217](https://github.com/Ro706/java_class/assets/60247178/a9a71bd5-2f8b-436b-a1a0-8e0f5dc771c3)
 
+# Date and Time Conversion Characters in Java
+
+When working with date and time formatting in Java, you can use conversion characters to represent specific components of a date or time string. These characters are used within date and time pattern strings to format or parse date-time values. Below, I've provided a list of common conversion characters along with their meanings:
+
+| Conversion Specifier | Description |
+|----------------------|-------------|
+| `%s` | Formats a string argument. |
+| `%d` | Formats an integer (decimal) argument. |
+| `%f` | Formats a floating-point (double) argument. |
+| `%c` | Formats a character argument. |
+| `%b` | Formats a boolean argument. |
+| `%n` | Inserts a newline character. |
+| `%t` | Formats date/time values (used with date/time patterns). |
+| `%x` | Formats an integer as a hexadecimal number. |
+| `%o` | Formats an integer as an octal number. |
+| `%e` | Formats a floating-point number in scientific notation. |
+| `%g` | Formats a floating-point number in either decimal or scientific notation. |
+
+## Example Usage
+
+```java
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class DateTimeFormattingExample {
+    public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
+
+        // Custom pattern using conversion characters
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = now.format(formatter);
+        System.out.println("Formatted DateTime: " + formattedDateTime);
+    }
+}
+```
+
+Output:
+```
+Formatted DateTime: 2023-05-11 18:30:45
+```
+---
+# File Input and Output in Java
+
+File input and output (I/O) operations are essential for reading data from files and writing data to files. In Java, you can perform file I/O using the `java.nio.file` package. Let's explore how to read from and write to files efficiently:
+
+## Reading from Files
+
+1. **Reading All Bytes from a File**:
+   - Use the `Files.readAllBytes(Path path)` method to read all bytes from a file into a byte array.
+   - Example:
+     ```java
+     import java.nio.file.Files;
+     import java.nio.file.Path;
+     import java.io.IOException;
+
+     public class ReadBytesExample {
+         public static void main(String[] args) {
+             try {
+                 Path filePath = Path.of("sample.txt");
+                 byte[] fileBytes = Files.readAllBytes(filePath);
+                 System.out.println(new String(fileBytes));
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+         }
+     }
+     ```
+
+2. **Reading Lines from a Text File**:
+   - Use the `Files.readAllLines(Path path)` method to read all lines from a text file into a list of strings.
+   - Example:
+     ```java
+     import java.nio.file.Files;
+     import java.nio.file.Path;
+     import java.io.IOException;
+     import java.util.List;
+
+     public class ReadLinesExample {
+         public static void main(String[] args) {
+             try {
+                 Path filePath = Path.of("sample.txt");
+                 List<String> lines = Files.readAllLines(filePath);
+                 for (String line : lines) {
+                     System.out.println(line);
+                 }
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+         }
+     }
+     ```
+
+## Writing to Files
+
+1. **Writing Bytes to a File**:
+   - Use the `Files.write(Path path, byte[] bytes)` method to write bytes to a file.
+   - Example:
+     ```java
+     import java.nio.file.Files;
+     import java.nio.file.Path;
+     import java.io.IOException;
+
+     public class WriteBytesExample {
+         public static void main(String[] args) {
+             try {
+                 Path filePath = Path.of("output.txt");
+                 byte[] data = "Hello, World!".getBytes();
+                 Files.write(filePath, data);
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+         }
+     }
+     ```
+
+2. **Writing Lines to a Text File**:
+   - Use the `Files.write(Path path, Iterable<? extends CharSequence> lines)` method to write lines to a text file.
+   - Example:
+     ```java
+     import java.nio.file.Files;
+     import java.nio.file.Path;
+     import java.io.IOException;
+     import java.util.List;
+
+     public class WriteLinesExample {
+         public static void main(String[] args) {
+             try {
+                 Path filePath = Path.of("output.txt");
+                 List<String> lines = List.of("Line 1", "Line 2", "Line 3");
+                 Files.write(filePath, lines);
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+         }
+     }
+     ```
+
+---
+# Block Scope in Java
+
+In Java, **block scope** refers to the visibility and accessibility of a variable declared inside a block of code enclosed in curly braces `{}`. Variables declared inside a block have a scope limited to that block only and are not accessible outside the block. Once the block is exited, the variable goes out of scope and is no longer accessible.
+
+Here are some key points about block scope:
+
+1. **Local Variables**:
+   - Variables declared directly inside a method, constructor, or code block are local variables.
+   - Local variables are accessible only within the block in which they are defined.
+   - They do not exist outside their scope.
+
+2. **Example**:
+   ```java
+   public class BlockScopeExample {
+       public static void main(String[] args) {
+           // Code here CANNOT use 'x'
+           {
+               // This is a block
+               // Code here CANNOT use 'x'
+               int x = 100;
+               // Code here CAN use 'x'
+               System.out.println(x);
+           }
+           // The block ends here
+           // Code here CANNOT use 'x'
+       }
+   }
+   ```
+
+3. **Block Scope and Control Structures**:
+   - A block of code may exist on its own or belong to an `if`, `while`, or `for` statement.
+   - In the case of `for` statements, variables declared in the statement itself are also available inside the block's scope.
+
+For Example: 
+```java
+public class BlockScopeExample {
+    public static void main(String[] args) {
+        // Code here CANNOT use 'x'
+        {
+            // This is a block
+            // Code here CANNOT use 'x'
+            int x = 100;
+            // Code here CAN use 'x'
+            System.out.println("Inside the block: " + x);
+        }
+        // The block ends here
+        // Code here CANNOT use 'x'
+    }
+}
+```
+---
+# Conditional Statements in Java
+
+Conditional statements in Java allow you to make decisions in your program based on specific conditions. These statements control the flow of execution by executing different lines of code depending on whether a particular condition is true or false. Let's explore the main types of conditional statements in Java:
+
+## 1. `if` Statement
+
+The `if` statement is the most basic conditional statement. It allows you to execute a block of code only if a specified condition is true. The syntax is as follows:
+
+```java
+if (condition) {
+    // Code to execute if the condition is true
+}
+```
+
+Example:
+
+```java
+int age = 18;
+if (age >= 18) {
+    System.out.println("You are an adult.");
+}
+```
+
+## 2. `if-else` Statement
+
+The `if-else` statement extends the `if` statement by allowing you to specify an alternative block of code to execute if the condition is false. The syntax is:
+
+```java
+if (condition) {
+    // Code to execute if the condition is true
+} else {
+    // Code to execute if the condition is false
+}
+```
+
+Example:
+
+```java
+int temperature = 25;
+if (temperature > 30) {
+    System.out.println("It's hot outside.");
+} else {
+    System.out.println("It's not too hot.");
+}
+```
+
+## 3. `if-else if-else` Statement
+
+The `if-else if-else` statement allows you to test multiple conditions sequentially. It executes the first block of code whose condition is true. The syntax is:
+
+```java
+if (condition1) {
+    // Code to execute if condition1 is true
+} else if (condition2) {
+    // Code to execute if condition2 is true
+} else {
+    // Code to execute if no condition is true
+}
+```
+
+Example:
+
+```java
+int score = 75;
+if (score >= 90) {
+    System.out.println("Excellent!");
+} else if (score >= 70) {
+    System.out.println("Good job!");
+} else {
+    System.out.println("Keep practicing.");
+}
+```
+
+## 4. `switch` Statement
+
+The `switch` statement allows you to test a variable against multiple possible values. It provides an alternative to long chains of `if-else if` statements. The syntax is:
+
+```java
+switch (variable) {
+    case value1:
+        // Code to execute if variable equals value1
+        break;
+    case value2:
+        // Code to execute if variable equals value2
+        break;
+    // ...
+    default:
+        // Code to execute if no case matches
+}
+```
+
+Example:
+
+```java
+char grade = 'B';
+switch (grade) {
+    case 'A':
+        System.out.println("Excellent!");
+        break;
+    case 'B':
+        System.out.println("Good job!");
+        break;
+    default:
+        System.out.println("Keep working hard.");
+}
+```
+# Loops in Java
+
+Loops in Java allow you to execute a block of code repeatedly based on a specified condition. They are essential for automating repetitive tasks and iterating over collections of data. Let's explore the main types of loops in Java:
+
+## 1. `for` Loop
+
+The `for` loop is commonly used for iterating over a range of values or elements in an array. It has the following syntax:
+
+```java
+for (initialization; condition; update) {
+    // Code to execute repeatedly
+}
+```
+
+- `initialization`: Initializes a loop control variable.
+- `condition`: Specifies the condition for executing the loop.
+- `update`: Updates the loop control variable after each iteration.
+
+Example:
+
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println("Iteration " + i);
+}
+```
+
+## 2. `while` Loop
+
+The `while` loop repeatedly executes a block of code as long as a specified condition remains true. It has the following syntax:
+
+```java
+while (condition) {
+    // Code to execute repeatedly
+}
+```
+
+Example:
+
+```java
+int count = 0;
+while (count < 3) {
+    System.out.println("Count: " + count);
+    count++;
+}
+```
+
+## 3. `do-while` Loop
+
+The `do-while` loop is similar to the `while` loop, but it always executes the block of code at least once, even if the condition is initially false. It has the following syntax:
+
+```java
+do {
+    // Code to execute repeatedly
+} while (condition);
+```
+
+Example:
+
+```java
+int num = 5;
+do {
+    System.out.println("Number: " + num);
+    num--;
+} while (num > 0);
+```
+
+## 4. Enhanced `for` Loop (for-each)
+
+The enhanced `for` loop (also known as the for-each loop) simplifies iterating over elements in an array or collection. It has the following syntax:
+
+```java
+for (type variable : collection) {
+    // Code to execute for each element
+}
+```
+
+Example:
+
+```java
+String[] fruits = { "Apple", "Banana", "Orange" };
+for (String fruit : fruits) {
+    System.out.println("Fruit: " + fruit);
+}
+```
+---
 
