@@ -1367,5 +1367,155 @@ for (int i = 0; i < twoDimensionalArray.length; i++) {
     }
 }
 ```
+# Object-Oriented Programming in Java
+
+## Introduction
+Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data and code that manipulates the data. Java is a popular object-oriented programming language that provides robust support for OOP principles: encapsulation, inheritance, polymorphism, and abstraction.
+
+## Principles of OOP
+
+### Encapsulation
+Encapsulation is the mechanism of restricting access to certain details of an object and only exposing essential features. This is achieved using access modifiers (`private`, `protected`, `public`) and methods (getters and setters).
+
+```java
+public class Person {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+```
+
+### Inheritance
+Inheritance allows a new class to inherit properties and methods from an existing class. The existing class is called the superclass, and the new class is called the subclass.
+
+```java
+public class Animal {
+    public void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+public class Dog extends Animal {
+    public void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+// Usage
+Dog dog = new Dog();
+dog.eat();  // Inherited method
+dog.bark(); // Subclass method
+```
+
+### Polymorphism
+Polymorphism enables a single action to behave differently based on the object that it is acting upon. It can be achieved through method overriding and method overloading.
+
+#### Method Overriding
+
+```java
+public class Animal {
+    public void sound() {
+        System.out.println("This animal makes a sound.");
+    }
+}
+
+public class Dog extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("The dog barks.");
+    }
+}
+
+// Usage
+Animal myAnimal = new Dog();
+myAnimal.sound(); // The dog barks.
+```
+
+#### Method Overloading
+
+```java
+public class MathUtils {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+
+// Usage
+MathUtils math = new MathUtils();
+int sum1 = math.add(5, 10); // 15
+double sum2 = math.add(5.5, 10.5); // 16.0
+```
+
+### Abstraction
+Abstraction involves hiding the complex implementation details and showing only the necessary features of an object. It can be achieved using abstract classes and interfaces.
+
+#### Abstract Classes
+
+```java
+public abstract class Shape {
+    abstract void draw();
+}
+
+public class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+// Usage
+Shape shape = new Circle();
+shape.draw(); // Drawing a circle.
+```
+
+#### Interfaces
+
+```java
+public interface Animal {
+    void eat();
+    void sleep();
+}
+
+public class Cat implements Animal {
+    @Override
+    public void eat() {
+        System.out.println("The cat eats.");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("The cat sleeps.");
+    }
+}
+
+// Usage
+Animal cat = new Cat();
+cat.eat();   // The cat eats.
+cat.sleep(); // The cat sleeps.
+```
+
+## Conclusion
+Object-oriented programming in Java provides a clear modular structure for programs, making it easier to maintain and modify existing code. The four key principles of OOP—encapsulation, inheritance, polymorphism, and abstraction—allow developers to create more flexible, scalable, and manageable software. Understanding these principles and their implementation in Java is crucial for effective Java programming.
+
+---
 
 
