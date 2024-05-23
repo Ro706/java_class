@@ -1180,4 +1180,192 @@ for (String fruit : fruits) {
 }
 ```
 ---
+# BigInteger in Java
+
+In Java, the `BigInteger` class is a powerful tool for handling large integer values that exceed the capacity of primitive data types (such as `int` or `long`). It allows you to perform arithmetic operations on integers of practically unlimited size, constrained only by available memory. Here are some key points about `BigInteger`:
+
+1. **Arbitrary Precision**:
+   - `BigInteger` represents arbitrary-precision integers.
+   - Unlike primitive data types, it dynamically allocates memory as needed to store large numbers.
+   - It can handle integers of any size, limited only by available memory.
+
+2. **Immutable and Precise**:
+   - `BigInteger` objects are immutable, meaning their values cannot be changed after creation.
+   - They provide precise results for arithmetic operations without loss of information.
+
+3. **Initialization**:
+   - You can create a `BigInteger` using various constructors:
+     - `BigInteger(String val)`: Initializes from a string representation.
+     - `BigInteger(long val)`: Initializes from a `long` value.
+     - `BigInteger(byte[] val)`: Initializes from a byte array.
+
+4. **Common Operations**:
+   - `add(BigInteger val)`: Returns a `BigInteger` whose value is the sum of this and `val`.
+   - `subtract(BigInteger val)`: Returns a `BigInteger` whose value is the difference between this and `val`.
+   - `multiply(BigInteger val)`: Returns a `BigInteger` whose value is the product of this and `val`.
+   - `divide(BigInteger val)`: Returns a `BigInteger` whose value is the integer division of this by `val`.
+   - `remainder(BigInteger val)`: Returns a `BigInteger` whose value is the remainder of this divided by `val`.
+
+5. **Comparison and Equality**:
+   - `compareTo(BigInteger val)`: Compares this `BigInteger` with the specified `BigInteger`.
+   - `equals(Object obj)`: Checks if this `BigInteger` is equal to the specified object.
+
+6. **Other Methods**:
+   - `abs()`: Returns the absolute value of this `BigInteger`.
+   - `bitCount()`: Returns the number of bits in the two's complement representation.
+   - `toString()`: Converts this `BigInteger` to a string.
+
+`BigInteger` is commonly used in scenarios where precision matters, such as cryptography, large factorials, and competitive programming. It provides a robust solution for handling large integer calculations! 
+```java
+import java.math.BigInteger;
+
+public class FactorialExample {
+    public static void main(String[] args) {
+        int N = 20; // Calculate factorial for N
+
+        // Calculate N!
+        BigInteger factorial = BigInteger.ONE;
+        for (int i = 2; i <= N; i++) {
+            factorial = factorial.multiply(BigInteger.valueOf(i));
+        }
+
+        System.out.println("Factorial of " + N + " is:");
+        System.out.println(factorial);
+    }
+}
+```
+
+---
+# Arrays in Java
+
+## Introduction
+An array in Java is a container object that holds a fixed number of values of a single type. The length of an array is established when the array is created. After creation, its length is fixed. Each item in an array is called an element, and each element is accessed by its numerical index.
+
+## Declaring an Array
+
+To declare an array in Java, you define the variable type with square brackets.
+
+```java
+// Declare an array of integers
+int[] anArray;
+
+// Declare an array of strings
+String[] aStringArray;
+```
+
+## Creating an Array
+
+After declaring an array, you need to instantiate it with the `new` keyword.
+
+```java
+// Instantiate an array of integers with 10 elements
+anArray = new int[10];
+
+// Instantiate an array of strings with 5 elements
+aStringArray = new String[5];
+```
+
+You can also combine declaration and instantiation.
+
+```java
+int[] anArray = new int[10];
+String[] aStringArray = new String[5];
+```
+
+## Initializing an Array
+
+Arrays can be initialized when they are declared.
+
+```java
+int[] anArray = {1, 2, 3, 4, 5};
+String[] aStringArray = {"Hello", "World"};
+```
+
+## Accessing Array Elements
+
+Array elements are accessed using their index, which starts from `0`.
+
+```java
+int firstElement = anArray[0]; // Access the first element
+String firstString = aStringArray[0]; // Access the first string
+```
+
+You can also update an array element using its index.
+
+```java
+anArray[0] = 10; // Update the first element to 10
+aStringArray[0] = "Hi"; // Update the first string to "Hi"
+```
+
+## Array Length
+
+The length of an array can be obtained using the `length` property.
+
+```java
+int arrayLength = anArray.length;
+System.out.println("Array Length: " + arrayLength);
+```
+
+## Iterating Through an Array
+
+You can iterate through an array using a `for` loop or an enhanced `for` loop.
+
+### Using a `for` loop
+
+```java
+for (int i = 0; i < anArray.length; i++) {
+    System.out.println(anArray[i]);
+}
+```
+
+### Using an enhanced `for` loop
+
+```java
+for (int element : anArray) {
+    System.out.println(element);
+}
+```
+
+## Multidimensional Arrays
+
+Java supports multidimensional arrays, commonly known as arrays of arrays. 
+
+### Declaring a Two-Dimensional Array
+
+```java
+int[][] twoDimensionalArray;
+```
+
+### Creating a Two-Dimensional Array
+
+```java
+twoDimensionalArray = new int[3][4]; // 3 rows and 4 columns
+```
+
+### Initializing a Two-Dimensional Array
+
+```java
+int[][] twoDimensionalArray = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};
+```
+
+### Accessing Elements in a Two-Dimensional Array
+
+```java
+int value = twoDimensionalArray[0][1]; // Accesses the second element in the first row
+```
+
+### Iterating Through a Two-Dimensional Array
+
+```java
+for (int i = 0; i < twoDimensionalArray.length; i++) {
+    for (int j = 0; j < twoDimensionalArray[i].length; j++) {
+        System.out.println(twoDimensionalArray[i][j]);
+    }
+}
+```
+
 
