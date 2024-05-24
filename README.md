@@ -1527,5 +1527,6 @@ you simply write
 var harry = new Employee("Harry hacker",55000,1989,10,1);
 ```
 This is nice since it avoids the repetition of the type name Employee
+
 ---
 --Made by Ro706
