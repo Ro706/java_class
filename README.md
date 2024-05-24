@@ -1517,5 +1517,15 @@ cat.sleep(); // The cat sleeps.
 Object-oriented programming in Java provides a clear modular structure for programs, making it easier to maintain and modify existing code. The four key principles of OOP—encapsulation, inheritance, polymorphism, and abstraction—allow developers to create more flexible, scalable, and manageable software. Understanding these principles and their implementation in Java is crucial for effective Java programming.
 
 ---
-
+## Declaring  Local variables with var
+As of java 10,you can declare local variables with the var keyword instead of specifying their type , provided their type can be inferred form the initial value.For example , instead of declaring
+```java
+Employee harry = new Employee("Harry hacker",55000,1989,10,1);
+```
+you simply write 
+```java
+var harry = new Employee("Harry hacker",55000,1989,10,1);
+```
+This is nice since it avoids the repetition of the type name Employee
+---
 --Made by Ro706
