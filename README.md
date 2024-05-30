@@ -1529,4 +1529,119 @@ var harry = new Employee("Harry hacker",55000,1989,10,1);
 This is nice since it avoids the repetition of the type name Employee
 
 ---
+## Object Destruction and the finalize Method in Java
+
+---
+
+## Overview
+
+This README provides an overview of object destruction and the `finalize` method in Java. Understanding how Java manages memory and object lifecycle is crucial for writing efficient and reliable code. This guide covers:
+
+- Object lifecycle in Java
+- The role of garbage collection
+- The `finalize` method
+- Best practices for resource management
+
+## Object Lifecycle in Java
+
+In Java, objects are created using the `new` keyword and live until they are no longer reachable by any part of the program. The Java Virtual Machine (JVM) uses an automatic memory management system called Garbage Collection (GC) to reclaim memory used by objects that are no longer needed.
+
+## Garbage Collection
+
+Garbage Collection in Java is the process of automatically detecting and reclaiming memory that is no longer in use. The JVM's garbage collector identifies objects that are no longer reachable and removes them from memory, freeing up resources.
+
+### Key Points:
+
+- **Automatic:** The programmer does not need to manually free memory.
+- **Non-deterministic:** You cannot predict exactly when garbage collection will occur.
+- **Reachability:** Objects that are reachable through references from active parts of the application are not collected.
+
+## The `finalize` Method
+
+The `finalize` method is a special method in Java that can be overridden by classes to perform cleanup operations before the object is destroyed by the garbage collector. It is defined in the `Object` class as follows:
+
+```java
+protected void finalize() throws Throwable {
+    // cleanup code
+}
+```
+
+### Important Considerations:
+
+1. **Unreliable Execution:**
+   - There is no guarantee when or if `finalize` will be called.
+   - An object with a `finalize` method may be resurrected during finalization, leading to potential memory leaks.
+
+2. **Performance Overhead:**
+   - The garbage collector needs to perform additional work to finalize objects, which can lead to performance issues.
+
+3. **Deprecated in Java 9:**
+   - The `finalize` method has been deprecated in Java 9 and is considered obsolete. It is recommended to use other resource management techniques.
+
+## Best Practices for Resource Management
+
+Given the limitations and deprecation of the `finalize` method, the following best practices are recommended:
+
+### 1. Use `try-with-resources` Statement
+
+For managing resources such as files, sockets, and database connections, the `try-with-resources` statement (introduced in Java 7) is preferred. It ensures that resources are closed automatically when no longer needed.
+
+Example:
+
+```java
+try (FileInputStream fis = new FileInputStream("file.txt")) {
+    // work with the file
+} catch (IOException e) {
+    e.printStackTrace();
+}
+// FileInputStream is automatically closed
+```
+
+### 2. Implement `AutoCloseable` Interface
+
+For custom resource management, implement the `AutoCloseable` interface and override the `close` method.
+
+Example:
+
+```java
+public class MyResource implements AutoCloseable {
+    @Override
+    public void close() {
+        // cleanup code
+    }
+}
+
+try (MyResource resource = new MyResource()) {
+    // work with the resource
+}
+// MyResource is automatically closed
+```
+
+### 3. Manual Cleanup
+
+In scenarios where automatic resource management is not feasible, ensure manual cleanup by explicitly calling cleanup methods in the appropriate places in your code.
+
+Example:
+
+```java
+public class MyResource {
+    public void cleanup() {
+        // cleanup code
+    }
+}
+
+MyResource resource = new MyResource();
+try {
+    // work with the resource
+} finally {
+    resource.cleanup();
+}
+```
+
+## Conclusion
+
+The `finalize` method is an outdated and unreliable mechanism for resource cleanup in Java. Modern best practices involve using the `try-with-resources` statement and the `AutoCloseable` interface for managing resources efficiently and safely. Understanding these practices will help you write more robust and maintainable Java applications.
+
+For more detailed information on garbage collection and resource management, refer to the official Java documentation and other authoritative resources.
+---
 --Made by Ro706
